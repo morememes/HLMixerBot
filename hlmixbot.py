@@ -35,8 +35,13 @@ async def on_message(message):
             await mix.remove_member(message)
         elif message.content == "!who":
             await message.channel.send(mix.get_members())
+        elif message.content.startswith('!pick'):
+            a = message.content.split()
+            print(message.author.id)
+            print(a)
+            await mix.pick_player(message) 
 
-Bot.run("NTkxMjI2OTY3ODYxMzYyNzA3.XQy6qg.t49DoYxD9vcR_Dmn6sppjjETzFU")
+Bot.run("token")
 
 
 
